@@ -2,7 +2,12 @@ import React from 'react'
 
 const UserList = () => {
   return (
-    <div>dijdeijod</div>
+    <div className='container'>
+      <div className='row'>
+        <div className='col-md-6'>
+          UserList</div>
+      </div>
+    </div>
   )
 }
 

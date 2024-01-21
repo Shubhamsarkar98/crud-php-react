@@ -5,8 +5,8 @@ const Home = () => {
     <div className='container'>
       <div className='row'>
         <div className='col-md-6'>
-        Home</div>
-        </div>
+          Home</div>
+      </div>
     </div>
   )
 }
