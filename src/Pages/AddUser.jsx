@@ -6,7 +6,7 @@ import Select from '../components/Select';
 const AddUser = () => {
   const [name, setname] = useState('');
   const [status, setStatus] = useState('');
-
+  const [email, setemail] = useState('')
   const valueSelect = {
     selectFirst: 'Select your Status',
     SelectActive: 'Active',
@@ -33,7 +33,7 @@ const AddUser = () => {
             </div>
             <div className='mb-3'>
               <Labal htmlFor={'exampleInputEmail1'} labalName={'User Email '} />
-              <Input type={'email'} placeholder={'User Email'} id={'exampleInputEmail1'} />
+              <Input type={'email'} placeholder={'User Email'} id={'exampleInputEmail1'}   onChange={(e) => setemail(e.target.value)} />
             </div>
             <div className='mb-3'>
               <Labal htmlFor={'exampleInputstatus'} labalName={'Status'} />
