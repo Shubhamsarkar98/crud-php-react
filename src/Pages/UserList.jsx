@@ -5,7 +5,7 @@ const UserList = () => {
     <div className='container'>
       <div className='row'>
         <div className='col-md-6'>
-          UserList</div>
+          User list</div>
       </div>
     </div>
   )
