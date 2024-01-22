@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import Header from './components/Header'
-import {Route,Routes} from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import Home from './Pages/Home'
 import UserList from "./Pages/UserList"
 import Footer from './components/Footer'
 import AddUser from './Pages/AddUser'
 
 function App() {
-  
+
   return (
     <>
     <Header/>
