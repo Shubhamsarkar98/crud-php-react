@@ -30,18 +30,12 @@ const Header = () => {
             User list
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link active" aria-current="page" to="/adduser">
+            Add User
+            </Link>
+          </li>
         </ul>
-        {/* <form className="d-flex" role="search">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button className="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form> */}
       </div>
     </div>
   </nav>
