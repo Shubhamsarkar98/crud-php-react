@@ -12,7 +12,7 @@ const AddUser = () => {
     SelectActive: 'Active',
     selecatFalse: 'InActive',
   };
-
+  const [email, setemail] = useState('')
   
 
   return (
@@ -33,7 +33,7 @@ const AddUser = () => {
             </div>
             <div className='mb-3'>
               <Labal htmlFor={'exampleInputEmail1'} labalName={'User Email '} />
-              <Input type={'email'} placeholder={'User Email'} id={'exampleInputEmail1'} />
+              <Input type={'email'} placeholder={'User Email'} id={'exampleInputEmail1'} value={email} onChange={(e)=setemail(e.target.value)} />
             </div>
             <div className='mb-3'>
               <Labal htmlFor={'exampleInputstatus'} labalName={'Status'} />
