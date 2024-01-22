@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Select = ({ options, value, onChange }) => {
-    console.log(value)
+  
     return (
         <>
             <select

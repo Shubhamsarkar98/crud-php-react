@@ -8,7 +8,7 @@ const Footer = () => {
    <div className="container-fluid">
     <div className='row'>
         <div className='col-md-12'>
-         <p style={{color:"white"}}>&copy; {year} Your Company Name. All rights reserved.</p>
+         <p style={{color:"white",alignContent:'center'}}>&copy; {year} Your Company Name. All rights reserved.</p>
         </div>
     </div>
    </div>
