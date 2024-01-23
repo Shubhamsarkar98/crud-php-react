@@ -1,18 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; 
 
 const Table = ({ data, headers }) => {
+  const navigate = useNavigate();
+
   const handleView = (id) => {
-    // Handle the view action (you can navigate to a view page or show details)
     console.log(`View clicked for user with ID ${id}`);
   };
 
-  const handleEdit = (id) => {
-    // Handle the edit action (you can navigate to an edit page)
-    console.log(`Edit clicked for user with ID ${id}`);
+  const handleEdit = async (id) => {
+    navigate(`/edituser/${id}`);
   };
 
   const handleDelete = (id) => {
-    // Handle the delete action
     console.log(`Delete clicked for user with ID ${id}`);
   };
 
