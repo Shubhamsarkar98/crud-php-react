@@ -53,7 +53,6 @@ const AddUser = () => {
     try {
       if (editMode) {
       const res=  await edit(id, data);
-      console.log(res)
         alert('User updated successfully');
       } else {
         await add(data);
