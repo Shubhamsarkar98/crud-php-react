@@ -18,3 +18,7 @@ export async function edit(id, data) {
     return res.data;
 }
 
+export async function getAll() {
+    const res = await api.get('');
+    return res.data;
+}
