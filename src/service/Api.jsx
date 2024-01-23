@@ -8,4 +8,9 @@ const api = axios.create({
     },
 });
 
-export default api;
+export async function add(data) {
+    const res = await api.post('', data);
+    return res.data; // Assuming you want to return the response data
+}
+
+
