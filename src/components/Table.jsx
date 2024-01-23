@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Table = ({ data, headers }) => {
   const navigate = useNavigate();
 
-  const handleView = (id) => {
-    console.log(`View clicked for user with ID ${id}`);
-  };
+ 
 
   const handleEdit = async (id) => {
     navigate(`/edituser/${id}`);
@@ -26,7 +24,7 @@ const Table = ({ data, headers }) => {
                 {header}
               </th>
             ))}
-            <th scope="col">Actions</th>
+          
             <th scope="col">Actions</th>
             <th scope="col">Actions</th>
           </tr>
@@ -37,9 +35,7 @@ const Table = ({ data, headers }) => {
               {headers.map((header, colIndex) => (
                 <td key={colIndex}>{item[header.toLowerCase()]}</td>
               ))}
-              <td>
-                <button className='btn btn-primary' onClick={() => handleView(item.id)}>View</button>
-              </td>
+              
               <td>
                 <button className='btn btn-success' onClick={() => handleEdit(item.id)}>Edit</button>
               </td>
