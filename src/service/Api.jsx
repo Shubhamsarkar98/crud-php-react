@@ -10,7 +10,11 @@ const api = axios.create({
 
 export async function add(data) {
     const res = await api.post('', data);
-    return res.data; // Assuming you want to return the response data
-}
+    return res.data;
 
+}
+export async function edit(id, data) {
+    const res = await api.put(`/${id}`, data);
+    return res.data;
+}
 
