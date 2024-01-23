@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Input from '../components/Input';
 import Labal from '../components/Labal';
 import Select from '../components/Select';
-import Api from '../service/Api';
+import { add } from '../service/Api';
 import {useNavigate} from "react-router-dom"
 
 const AddUser = () => {
@@ -26,11 +26,10 @@ const AddUser = () => {
     };
 
     try {
-      const response = await Api.post('', data); // Pass data as a string
-
-      if (response.data.success) {
+      const response = await add(data);
+      if (response) {
         alert('User added successfully');
-        navi('/userlist')
+        navi('/userlist');
       } else {
         console.log('Failed to add user');
       }
@@ -38,6 +37,7 @@ const AddUser = () => {
       console.error('API request failed', error);
     }
   };
+
 
   return (
     <div className='container' style={{ height: '600px' }}>
