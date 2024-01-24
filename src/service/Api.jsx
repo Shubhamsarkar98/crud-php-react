@@ -28,3 +28,8 @@ export async function getAll() {
   const res = await api.get('');
   return res.data;
 }
+
+export async function deleteUser(id) {
+    const res = await api.delete(`/${id}`);
+    return res.data;
+  }
