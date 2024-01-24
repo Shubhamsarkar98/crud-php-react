@@ -6,6 +6,7 @@ const UserList = () => {
       <div className='row'>
         <div className='col-md-6'>
           User list</div>
+        
       </div>
     </div>
   )
