@@ -1,17 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; 
-
+import {deleteUser} from '../service/Api'
 const Table = ({ data, headers }) => {
   const navigate = useNavigate();
-
-  
 
   const handleEdit = async (id) => {
     navigate(`/edituser/${id}`);
   };
 
-  const handleDelete = (id) => {
-    console.log(`Delete clicked for user with ID ${id}`);
+  const handleDelete = async (id) => {
+    try {
+      const result = await deleteUser(id);
+      console.log(result);
+      console.log(result); // Log the result, e.g., { success: 'Record deleted successfully' }
+
+    } catch (error) {
+      console.error(error); 
+    }
   };
 
   return (

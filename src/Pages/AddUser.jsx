@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Input from '../components/Input';
 import Select from '../components/Select';
-import Label from '../components/Labal';
-import { add, edit, getAll } from '../service/Api'; 
+import { add, edit, getAll } from '../service/Api';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const AddUser = () => {
@@ -52,7 +51,7 @@ const AddUser = () => {
 
     try {
       if (editMode) {
-      const res=  await edit(id, data);
+        const res = await edit(id, data);
         alert('User updated successfully');
       } else {
         await add(data);
@@ -71,28 +70,29 @@ const AddUser = () => {
           <h5 className='mb-4'>{editMode ? 'Edit User' : 'Add User'}</h5>
           <form>
             <div className='mb-3'>
-              <Label htmlFor={'exampleInput'} labelName={'Add user'} />
+
               <Input
                 type={'text'}
                 placeholder={'Add user name'}
                 id={'exampleInputEmail1'}
                 onChange={(e) => setname(e.target.value)}
                 value={name}
+                htmlFor={'exampleInput'} labelName={'Add user'}
               />
             </div>
             <div className='mb-3'>
-              <Label htmlFor={'exampleInputEmail1'} labelName={'User Email'} />
               <Input
                 type={'email'}
                 placeholder={'User Email'}
                 id={'exampleInputEmail1'}
                 value={emailBy}
+                htmlFor={'exampleInputEmail1'}
+                labelName={'User Email'}
                 onChange={(e) => setemail(e.target.value)}
               />
             </div>
             <div className='mb-3'>
-              <Label htmlFor={'exampleInputstatus'} labelName={'Status'} />
-              <Select options={valueSelect} value={status} onChange={(e) => setStatus(e.target.value)} />
+              <Select options={valueSelect} htmlFor={'exampleInputstatus'} labelName={'Status'} value={status} onChange={(e) => setStatus(e.target.value)} />
             </div>
             <button type='submit' className='btn btn-primary' onClick={(e) => handleClick(e)}>
               {editMode ? 'Update' : 'Submit'}
