@@ -24,9 +24,9 @@ const UserList = () => {
   };
 
 
-  const filteredData = data.filter((value)=>{
-  return  value?.username && value?.username.toString().toLowerCase().includes(searchTerm.toLowerCase())
-  })
+  const filteredData = data.filter((value)=>
+   value?.username && value?.username.toString().toLowerCase().includes(searchTerm.toLowerCase())
+  )
 
 
 
@@ -35,13 +35,15 @@ const UserList = () => {
     <div className='container' style={{ height: '600px', margin: '20px' }}>
       <div className='row'>
         <div className='col-md-12'>
+          <div className='col-md-4' style={{paddingBottom:'10px;'}}>
           <Input
             type={'text'}
-            placeholder={'Enter to search'}
+            placeholder={'Enter to Name'}
             id={'exampleInputEmail1'}
             value={searchTerm}
             onChange={(e)=>setSearchTerm(e.target.value)}
           />
+          </div>
           <Table data={filteredData} headers={headers} />
         </div>
       </div>
