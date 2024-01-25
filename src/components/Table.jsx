@@ -1,7 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; 
-import {deleteUser} from '../service/Api'
-const Table = ({ data, headers }) => {
+import { useNavigate } from 'react-router-dom';
+import { deleteUser } from '../service/Api';
+
+const Table = ({ data, headers, onSort, sortOrder, sortedField }) => {
   const navigate = useNavigate();
 
   const handleEdit = async (id) => {
@@ -25,10 +26,22 @@ const Table = ({ data, headers }) => {
           <tr>
             {headers.map((header, index) => (
               <th key={index} scope="col">
-                {header}
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  {header}
+                  {header !== 'Actions' && (
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <button
+                        className="btn btn-link btn-sm"
+                        onClick={() => onSort(header.toLowerCase())}
+                      >
+                        {sortedField === header.toLowerCase() && sortOrder === 'asc' && '▲'}
+                        {sortedField === header.toLowerCase() && sortOrder === 'desc' && '▼'}
+                      </button>
+                    </div>
+                  )}
+                </div>
               </th>
             ))}
-            
             <th scope="col">Actions</th>
             <th scope="col">Actions</th>
           </tr>
@@ -39,12 +52,15 @@ const Table = ({ data, headers }) => {
               {headers.map((header, colIndex) => (
                 <td key={colIndex}>{item[header.toLowerCase()]}</td>
               ))}
-             
               <td>
-                <button className='btn btn-success' onClick={() => handleEdit(item.id)}>Edit</button>
+                <button className="btn btn-success" onClick={() => handleEdit(item.id)}>
+                  Edit
+                </button>
               </td>
               <td>
-                <button className='btn btn-danger' onClick={() => handleDelete(item.userid)}>Delete</button>
+                <button className="btn btn-danger" onClick={() => handleDelete(item.userid)}>
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
