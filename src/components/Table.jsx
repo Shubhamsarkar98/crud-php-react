@@ -12,10 +12,9 @@ const Table = ({ data, headers }) => {
     try {
       const result = await deleteUser(id);
       console.log(result);
-      console.log(result); // Log the result, e.g., { success: 'Record deleted successfully' }
-
+      // Log the result, e.g., { success: 'Record deleted successfully' }
     } catch (error) {
-      console.error(error); 
+      console.error(error.response); // Log the error response
     }
   };
 
@@ -45,7 +44,7 @@ const Table = ({ data, headers }) => {
                 <button className='btn btn-success' onClick={() => handleEdit(item.id)}>Edit</button>
               </td>
               <td>
-                <button className='btn btn-danger' onClick={() => handleDelete(item.id)}>Delete</button>
+                <button className='btn btn-danger' onClick={() => handleDelete(item.userid)}>Delete</button>
               </td>
             </tr>
           ))}
