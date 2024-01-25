@@ -35,7 +35,7 @@ const UserList = () => {
     <div className='container' style={{ height: '600px', margin: '20px' }}>
       <div className='row'>
         <div className='col-md-12'>
-          <div className='col-md-4'>
+          <div className='col-md-4' style={{paddingBottom:'10px;'}}>
           <Input
             type={'text'}
             placeholder={'Enter to Name'}
