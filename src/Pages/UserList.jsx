@@ -6,9 +6,8 @@ import Input from '../components/Input';
 const UserList = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [sortOrder, setSortOrder] = useState('asc'); // 'asc' or 'desc'
-  const [sortedField, setSortedField] = useState('username'); // Default sorting field
-
+  const [sortOrder, setSortOrder] = useState('asc'); 
+  const [sortedField, setSortedField] = useState('username'); 
   const headers = ['ID', 'Username', 'useremail', 'Status'];
 
   useEffect(() => {
